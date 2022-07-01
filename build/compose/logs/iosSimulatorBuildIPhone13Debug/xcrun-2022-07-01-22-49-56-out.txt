@@ -1,0 +1,29 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme TeslaApp -project . -configuration Debug -derivedDataPath build -arch arm64 -sdk iphonesimulator15.5
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    ARCHS = arm64
+    SDKROOT = iphonesimulator15.5
+
+note: Using new build system
+note: Planning
+Analyze workspace
+
+Create build description
+Build description signature: aabfc4e5bcb25b01907202107e061200
+Build description path: /Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Intermediates.noindex/XCBuildData/aabfc4e5bcb25b01907202107e061200-desc.xcbuild
+
+note: Build preparation complete
+note: Building targets in dependency order
+error: Multiple commands produce '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt'
+    note: Target 'TeslaApp' (project 'TeslaApp') has copy command from '/Users/mobiledeveloper/Documents/Shared/TeslaApp/src/commonMain/kotlin/Platform.kt' to '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt'
+    note: Target 'TeslaApp' (project 'TeslaApp') has copy command from '/Users/mobiledeveloper/Documents/Shared/TeslaApp/src/jsMain/kotlin/Platform.kt' to '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt'
+    note: Target 'TeslaApp' (project 'TeslaApp') has copy command from '/Users/mobiledeveloper/Documents/Shared/TeslaApp/src/macosMain/kotlin/Platform.kt' to '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt'
+    note: Target 'TeslaApp' (project 'TeslaApp') has copy command from '/Users/mobiledeveloper/Documents/Shared/TeslaApp/src/uikitMain/kotlin/Platform.kt' to '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt'
+warning: duplicate output file '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt' on task: CpResource /Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt /Users/mobiledeveloper/Documents/Shared/TeslaApp/src/jsMain/kotlin/Platform.kt (in target 'TeslaApp' from project 'TeslaApp')
+warning: duplicate output file '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt' on task: CpResource /Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt /Users/mobiledeveloper/Documents/Shared/TeslaApp/src/macosMain/kotlin/Platform.kt (in target 'TeslaApp' from project 'TeslaApp')
+warning: duplicate output file '/Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt' on task: CpResource /Users/mobiledeveloper/Documents/Shared/TeslaApp/build/ios/IPhone13/TeslaApp.xcodeproj/build/Build/Products/Debug-iphonesimulator/TeslaApp.app/Platform.kt /Users/mobiledeveloper/Documents/Shared/TeslaApp/src/uikitMain/kotlin/Platform.kt (in target 'TeslaApp' from project 'TeslaApp')

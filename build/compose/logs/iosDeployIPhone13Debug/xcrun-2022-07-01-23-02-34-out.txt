@@ -1,0 +1,34 @@
+TODO: set title to SkiaWindow
+ComposeWindow.setContent
+Tesla Y selected
+Tesla Y selected
+Tesla Y selected
+Tesla Y selected
+Tesla S selected
+Tesla S selected
+Tesla S selected
+Tesla X selected
+Tesla S selected
+Tesla S selected
+Tesla X selected
+Tesla Model 3 selected
+Tesla Model 3 selected
+Tesla Y selected
+Tesla Y selected
+Tesla X selected
+Tesla X selected
+Tesla Model 3 selected
+Tesla Model 3 selected
+Tesla Y selected
+Tesla Y selected
+Tesla S selected
+Tesla S selected
+Tesla X selected
+Tesla X selected
+Tesla X selected
+Tesla Model 3 selected
+Tesla Model 3 selected
+Tesla Y selected
+Tesla Y selected
+Tesla Y selected
+Tesla Model 3 selected

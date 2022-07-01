@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: kotlin-stdlib-common
+Kotlin-Runtime-Component: Main
+Kotlin-Version: 1.6
+Implementation-Version: 1.6.21-release-334(1.6.21)
+Implementation-Vendor: JetBrains
+

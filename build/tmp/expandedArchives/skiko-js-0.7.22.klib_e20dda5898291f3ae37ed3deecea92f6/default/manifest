@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=org.jetbrains.skiko\:skiko
+compiler_version=1.6.10
+depends=org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu kotlin
+jsOutputName=skiko
+abi_version=1.6.0
+metadata_version=1.4.1
+ir_version=1.0.0

@@ -1,0 +1,18 @@
+{
+  "name": "TeslaApp",
+  "version": "1.0-SNAPSHOT",
+  "private": true,
+  "workspaces": [
+    "packages/TeslaApp",
+    "packages/TeslaApp-test",
+    "packages_imported/kotlin/1.6.21",
+    "packages_imported/skiko-js/0.7.22",
+    "packages_imported/kotlin-test-js-runner/1.6.21"
+  ],
+  "resolutions": {},
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

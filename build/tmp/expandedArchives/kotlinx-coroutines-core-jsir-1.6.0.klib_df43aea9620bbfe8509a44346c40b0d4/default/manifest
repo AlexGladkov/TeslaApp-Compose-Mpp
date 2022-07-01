@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=org.jetbrains.kotlinx\:kotlinx-coroutines-core
+compiler_version=1.6.0
+depends=org.jetbrains.kotlinx\:atomicfu kotlin
+jsOutputName=kotlinx.coroutines-kotlinx-coroutines-core-js-ir
+abi_version=1.6.0
+metadata_version=1.4.1
+ir_version=1.0.0

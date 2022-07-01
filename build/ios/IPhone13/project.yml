@@ -1,0 +1,35 @@
+name: TeslaApp
+options:
+  bundleIdPrefix: ru.agladkov
+settings:
+  
+  CODE_SIGN_IDENTITY: "iPhone Developer"
+  CODE_SIGN_STYLE: Automatic
+  MARKETING_VERSION: "1.0"
+  CURRENT_PROJECT_VERSION: "4"
+  SDKROOT: iphoneos
+targets:
+  TeslaApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "12.0"
+    prebuildScripts:
+      - script: cd "/Users/mobiledeveloper/Documents/Shared/TeslaApp" && ./gradlew -i -p . packComposeUikitApplicationForXCode
+        name: GradleCompile
+    info:
+      path: plists/Ios/Info.plist
+      properties:
+        UILaunchStoryboardName: ""
+        method: "development"
+    sources:
+      - path: "../../../src/"
+        excludes:
+          - "jvm*/**"
+          - "desktop*/**"
+          - "android*/**"
+          - "*Test/**"
+    settings:
+      LIBRARY_SEARCH_PATHS: "$(inherited)"
+      ENABLE_BITCODE: "YES"
+      ONLY_ACTIVE_ARCH: "NO"
+      VALID_ARCHS: "arm64"
