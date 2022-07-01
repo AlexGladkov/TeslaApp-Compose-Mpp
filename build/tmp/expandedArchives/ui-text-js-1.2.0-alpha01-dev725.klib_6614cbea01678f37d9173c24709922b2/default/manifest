@@ -1,8 +1,0 @@
-builtins_platform=JS
-unique_name=androidx.compose.ui\:ui-text
-compiler_version=1.6.21
-depends=androidx.compose.ui\:ui-graphics androidx.compose.ui\:ui-unit androidx.compose.runtime\:runtime-saveable androidx.compose.ui\:ui-geometry androidx.compose.runtime\:runtime org.jetbrains.skiko\:skiko androidx.compose.ui\:ui-util org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu kotlin
-jsOutputName=androidx-ui-text
-abi_version=1.6.0
-metadata_version=1.4.1
-ir_version=1.0.0
