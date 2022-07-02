@@ -3,10 +3,6 @@
 
 Compatibility: iOS/Web/Desktop/Android
 
-Based on: https://github.com/dima-avdeev-jb/compose-uikit-sample
-
-Thanks for Dima Avdeev
-
 How to use:
 1. Clone repo
 2. For iPhone 13 write in terminal `./gradlew iosDeployIPhone13Debug`
