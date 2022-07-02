@@ -1,7 +1,9 @@
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -14,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.*
+import androidx.compose.ui.draw.clip
 
 enum class CarDetailStep(val number: Int) {
     Car(1), Exterior(2), Interior(3), Autopilot(4)
@@ -180,10 +183,111 @@ fun CarDetailSecondStep(onNextClick: () -> Unit) {
 fun CarDetailThirdStep(onNextClick: () -> Unit) {
     Column(modifier = Modifier.padding(horizontal = 40.dp, vertical = 48.dp)) {
         Text(text = "Select Interior", color = Color(0xFFA4B0BC), fontSize = 20.sp)
+        Spacer(Modifier.height(26.dp))
+        Row {
+            Column {
+                Text(text = "Black and White", fontSize = 24.sp, color = Color.Black)
+                Spacer(Modifier.height(8.dp))
+                Text(text = "$1,000", fontSize = 20.sp, color = Color(0xFFD01000))
+            }
+
+            Spacer(Modifier.weight(1f))
+
+            Column {
+                Text(text = "All Black", fontSize = 24.sp, color = Color.Black.copy(alpha = 0.8f))
+                Spacer(Modifier.height(8.dp))
+                Text(text = "Included", fontSize = 20.sp, color = Color(0xFFA4B0BC))
+            }
+        }
+
+        Spacer(modifier = Modifier.height(28.dp))
+
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(
+                modifier = Modifier.clip(CircleShape)
+                    .border(BorderStroke(3.dp, color = Color(0xFFD01000)), shape = RoundedCornerShape(56.dp))
+                    .background(Color(0xFFF2F5F8)).size(56.dp)
+            )
+
+            Spacer(Modifier.width(8.dp))
+
+            Box(modifier = Modifier.clip(CircleShape).background(Color.Black).size(49.dp))
+        }
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("\$58,700", fontSize = 28.sp, color = Color.Black)
+            Spacer(Modifier.weight(1f))
+            Button(
+                modifier = Modifier.width(147.dp).height(52.dp),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color.White
+                ),
+                shape = RoundedCornerShape(size = 64.dp),
+                border = BorderStroke(width = 2.dp, color = Color(0xFFD01000)),
+                onClick = {
+                    onNextClick.invoke()
+                }
+            ) {
+                Text(text = "NEXT", fontSize = 16.sp, fontWeight = FontWeight.Medium)
+            }
+        }
     }
 }
 
 @Composable
 fun CarDetailForthStep(onNextClick: () -> Unit) {
+    Column(modifier = Modifier.padding(horizontal = 40.dp, vertical = 48.dp)) {
+        Text(text = "Autopilot", color = Color(0xFFA4B0BC), fontSize = 20.sp)
+        Spacer(Modifier.height(26.dp))
+        Row {
+            Column {
+                Text(text = "Full Self-Driving", fontSize = 24.sp, color = Color.Black)
+                Spacer(Modifier.height(8.dp))
+                Text(text = "$5,000", fontSize = 20.sp, color = Color(0xFFD01000))
+            }
 
+            Spacer(Modifier.weight(1f))
+
+            Column {
+                Text(text = "Autopilot", fontSize = 24.sp, color = Color.Black.copy(alpha = 0.8f))
+                Spacer(Modifier.height(8.dp))
+                Text(text = "$3,000", fontSize = 20.sp, color = Color(0xFFA4B0BC))
+            }
+        }
+
+        Spacer(Modifier.height(20.dp))
+
+        Text(
+            text = "Atomatic driving from highway on-ramp\n" +
+                    "to off-ramp including interchanges and overtaking slower cars.",
+            fontSize = 16.sp,
+            color = Color(0xFF979797)
+        )
+
+        Spacer(Modifier.height(20.dp))
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("\$60,700", fontSize = 28.sp, color = Color.Black)
+            Spacer(Modifier.weight(1f))
+            Button(
+                modifier = Modifier.width(147.dp).height(52.dp),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color.White
+                ),
+                shape = RoundedCornerShape(size = 64.dp),
+                border = BorderStroke(width = 2.dp, color = Color(0xFFD01000)),
+                onClick = {
+                    onNextClick.invoke()
+                }
+            ) {
+                Text(text = "NEXT", fontSize = 16.sp, fontWeight = FontWeight.Medium)
+            }
+        }
+    }
 }
