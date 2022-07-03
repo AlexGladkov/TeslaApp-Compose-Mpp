@@ -26,9 +26,9 @@ enum class CarDetailStep(val number: Int) {
 fun CarDetailScreen() {
     var currentStep: CarDetailStep by remember { mutableStateOf(CarDetailStep.Car) }
 
-    Column(modifier = Modifier.fillMaxSize().background(Color(0xFFA4B0BC))) {
+    Column(modifier = Modifier.fillMaxSize().background(Color(0xFFA4B0BC).copy(alpha = 0.2f))) {
         CarDetailHeader(currentStep)
-        CarDetailContent()
+        CarDetailContent(currentStep)
         CarDetailFooter(currentStep) {
             val currentStepPosition = CarDetailStep.values().indexOf(currentStep)
             if (currentStepPosition < CarDetailStep.values().size - 1) {
@@ -67,9 +67,12 @@ private fun ColumnScope.CarDetailHeader(currentStep: CarDetailStep) {
 }
 
 @Composable
-private fun ColumnScope.CarDetailContent() {
-    Box(modifier = Modifier.weight(1f).fillMaxWidth().background(Color(0xFFA4B0BC))) {
-
+private fun ColumnScope.CarDetailContent(carDetailStep: CarDetailStep) {
+    when (carDetailStep) {
+        CarDetailStep.Car -> CarDetailFirstContent()
+        CarDetailStep.Exterior -> CarDetailSecondContent()
+        CarDetailStep.Interior -> CarDetailThirdContent()
+        CarDetailStep.Autopilot -> CarDetailForthContent()
     }
 }
 
@@ -102,9 +105,9 @@ fun CarDetailFirstStep(onNextClick: () -> Unit) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = "3.5s", fontSize = 36.sp, color = Color.Black, fontWeight = FontWeight.Medium)
+                Text(text = "3.5s", fontSize = 30.sp, color = Color.Black, fontWeight = FontWeight.Medium)
                 Spacer(Modifier.height(8.dp))
-                Text(text = "0-60 mph", fontSize = 14.sp, color = Color.Black)
+                Text(text = "0-60 mph", fontSize = 12.sp, color = Color.Black)
             }
 
             Spacer(Modifier.weight(1f))
@@ -114,9 +117,9 @@ fun CarDetailFirstStep(onNextClick: () -> Unit) {
             Spacer(Modifier.weight(1f))
 
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = "150mph", fontSize = 36.sp, color = Color.Black, fontWeight = FontWeight.Medium)
+                Text(text = "150mph", fontSize = 30.sp, color = Color.Black, fontWeight = FontWeight.Medium)
                 Spacer(Modifier.height(8.dp))
-                Text(text = "Top speed", fontSize = 14.sp, color = Color.Black)
+                Text(text = "Top speed", fontSize = 12.sp, color = Color.Black)
             }
         }
 
@@ -290,4 +293,54 @@ fun CarDetailForthStep(onNextClick: () -> Unit) {
             }
         }
     }
+}
+
+@Composable
+fun ColumnScope.CarDetailFirstContent() {
+    Column(modifier = Modifier.weight(1f).padding(24.dp)) {
+        Text(text = "Select Your Car", fontSize = 18.sp, fontWeight = FontWeight.Light, color = Color(0xFFA4B0BC))
+        Box(modifier = Modifier.fillMaxWidth().weight(1f))
+        Row {
+            Column {
+                Text(
+                    text = "Performance", color = Color.Black, fontSize = 22.sp,
+                    fontWeight = FontWeight.Light
+                )
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    text = "$55,000", color = Color(0xFFD01000), fontSize = 18.sp,
+                    fontWeight = FontWeight.Light
+                )
+            }
+
+            Spacer(modifier = Modifier.weight(1f))
+
+            Column {
+                Text(
+                    text = "Long Range", color = Color.Black.copy(alpha = 0.4f), fontSize = 22.sp,
+                    fontWeight = FontWeight.Light
+                )
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    text = "$46,700", color = Color(0xFFA4B0BC).copy(alpha = 0.4f), fontSize = 18.sp,
+                    fontWeight = FontWeight.Light
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun CarDetailSecondContent() {
+
+}
+
+@Composable
+fun CarDetailThirdContent() {
+
+}
+
+@Composable
+fun CarDetailForthContent() {
+
 }
