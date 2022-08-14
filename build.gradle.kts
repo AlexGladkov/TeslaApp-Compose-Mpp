@@ -8,7 +8,7 @@ buildscript {
 }
 
 plugins {
-    id("com.android.library")
+    id("com.android.application")
     kotlin("multiplatform")
     id("org.jetbrains.compose")
 }
@@ -103,8 +103,10 @@ kotlin {
         }
 
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
-
+                implementation("androidx.appcompat:appcompat:1.5.0")
+                implementation("androidx.activity:activity-compose:1.5.1")
             }
         }
 
@@ -139,29 +141,27 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(31)
+    compileSdk = 32
 
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(31)
+        minSdk = 21
+        targetSdk = 32
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    packagingOptions {
-        pickFirst("lib/x86_64/libjsc.so")
-        pickFirst("lib/arm64-v8a/libjsc.so")
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     sourceSets {
         named("main") {
             manifest.srcFile("src/androidMain/AndroidManifest.xml")
             res.srcDirs("src/androidMain/res", "src/commonMain/resources")
-            assets.srcDirs("src/androidMain/assets", "src/commonMain/assets")
         }
+    }
+
+    packagingOptions {
+        exclude("META-INF/*")
     }
 }
 
