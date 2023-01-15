@@ -8,8 +8,22 @@
 </head>
 <body>
 <div>
-    <canvas id="ComposeTarget" width="800" height="600"></canvas>
+    <div id="clip">
+        <canvas id="ComposeTarget"/>
+    </div>
 </div>
-<script src="TeslaApp.js"> </script>
+<script>
+    // All thah js code can be moved to main.js.kt. It will be with dynamic =D
+
+    const canvas = document.getElementById("ComposeTarget");
+    canvas.width = window.innerWidth
+    // for unknown reasons bigger value broke rendering :)
+    // So all your pages should be less than 9999px by height
+    canvas.height = 9999
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth
+    })
+</script>
+<script src="TeslaApp.js"></script>
 </body>
 </html>
