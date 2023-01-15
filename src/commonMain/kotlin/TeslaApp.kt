@@ -5,6 +5,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -14,7 +15,22 @@ data class TeslaModel(
 )
 
 @Composable
-fun TeslaApp() {
+fun Root(
+    onSizeChange: ((width: Int, height: Int) -> Unit)?,
+    child: @Composable () -> Unit
+) {
+    Box(modifier = Modifier
+        .fillMaxWidth()
+        .onGloballyPositioned { coordinates ->
+            onSizeChange?.invoke(coordinates.size.width, coordinates.size.height)
+        }) {
+        child()
+    }
+}
+
+@Composable
+fun TeslaApp(onSizeChange: ((width: Int, height: Int) -> Unit)? = null) {
+    Root(onSizeChange) {
     Column {
         Text(
             modifier = Modifier.padding(16.dp),
@@ -92,5 +108,6 @@ fun TeslaApp() {
                 }
             }
         }
+    }
     }
 }
